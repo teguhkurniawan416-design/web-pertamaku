@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="id">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Printawan â€” Solusi Cetakmu Secepat Kilat!</title>
-  <meta name="description" content="Printawan: jasa print, fotokopi, dan cetak foto. Pesan melalui online & upload filenya." />
+  <title>Printawan ï¿½ Solusi Cetakmu Secepat Kilat!</title>
+  <meta name="description" content="Printawan: Jasa print, fotokopi, dan cetak foto. Pesan bisa melalui online maupun offline." />
   <style>
     /* ====== Reset & base ====== */
     :root{
@@ -26,7 +29,12 @@
     .container{max-width:1100px;margin:0 auto;padding:24px}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:48px;width:48px;object-fit:contain;border-radius:8px}
+    .brand img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
     .brand h1{font-size:18px;margin:0}
     nav ul{display:flex;gap:18px;margin:0;padding:0;list-style:none}
     nav a{font-weight:600;color:var(--muted)}
@@ -81,13 +89,13 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <!-- Ganti src logo.png dengan file logo kamu -->
-        <img src="logo.png" alt="logo printawan" />
-        <div>
-          <h1>Printawan</h1>
-          <div style="font-size:12px;color:var(--muted)">Solusi Cetakmu Secepat Kilat!</div>
-        </div>
-      </div>
+  <img src="logo-printawan.jpg" alt="Logo Printawan" style="height:60px;width:auto;border-radius:10px;">
+  <div>
+    <h1>Printawan</h1>
+    <div style="font-size:12px;color:var(--muted)">Solusi Cetakmu Secepat Kilat!</div>
+  </div>
+</div>
+
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
@@ -104,14 +112,14 @@
     <section id="home" class="hero">
       <div>
         <div class="eyebrow">Print & Fotokopi Cepat</div>
-        <h2>Printawan â€” Solusi Cetakmu Secepat Kilat!</h2>
-        <p>Kami menyediakan layanan print hitam-putih, berwarna, cetak foto, dan cetak undangan. Cepat, rapi, dan ramah mahasiswa.</p>
+        <h2>Printawan, Solusi Cetakmu Secepat Kilat!</h2>
+        <p>Kami menyediakan layanan print hitam-putih, berwarna, cetak foto, dan cetak undangan. Cepat, rapi, dan harga yang ramah untuk mahasiswa.</p>
         <a class="cta" href="#order">Pesan Sekarang</a>
 
         <div style="margin-top:22px;display:flex;gap:12px">
           <div class="card" style="flex:1">
             <strong>Lokasi</strong>
-            <div style="color:var(--muted);font-size:13px">Kec. Ngasem, Desa Karangrejo, Gang Jengitri</div>
+            <div style="color:var(--muted);font-size:13px">Kec. Ngasem, Desa Karangrejo, Dusun Kweden, Gang Jengitri</div>
           </div>
           <div class="card" style="width:220px">
             <strong>WhatsApp</strong>
@@ -120,21 +128,28 @@
         </div>
       </div>
 
-      <div class="card">
-        <!-- Bisa ganti dengan foto mesin atau suasana toko -->
-        <img src="hero-sample.jpg" alt="Hero" style="width:100%;height:260px;object-fit:cover;border-radius:10px;"/>
-      </div>
+     <div class="card" style="box-shadow:0 6px 20px rgba(0,0,0,0.08); overflow:hidden; border-radius:16px;">
+  <img src="banner-printawan.jpg" 
+       alt="Banner Printawan" 
+       style="width:100%; 
+              max-height:280px; 
+              object-fit:cover; 
+              border-radius:16px; 
+              display:block; 
+              margin:0 auto;">
+</div>
+
     </section>
 
     <section id="about" style="padding-top:18px">
       <h3>Tentang Kami</h3>
-      <p style="color:var(--muted)">Printawan adalah usaha percetakan atau usaha percetakan kecil yang dikelola oleh mahasiswa. Kami melayani kebutuhan cetak dokumen, foto, dan undangan dengan layanan cepat dan harga terjangkau.</p>
+      <p style="color:var(--muted)">Printawan hadir dari semangat mahasiswa untuk membantu sesama! Kami siap mencetak tugas, undangan, hingga foto-foto kenanganmu dengan hasil rapi, cepat, dan harga bersahabat di kantong pelajar.</p>
     </section>
 
     <section id="services" style="padding-top:18px">
       <h3>Layanan Kami</h3>
       <div class="grid">
-        <div class="service"><h4>Print Hitam Putih</h4><p>Cetak dokumen A4, rapi dan cepat.</p></div>
+        <div class="service"><h4>Print Hitam Putih</h4><p>Cetak dokumen A4 atau F4, rapi dan cepat.</p></div>
         <div class="service"><h4>Print Berwarna</h4><p>Hasil tajam untuk poster dan tugas.</p></div>
         <div class="service"><h4>Fotokopi</h4><p>Fotokopi cepat untuk kebutuhan kuliah.</p></div>
         <div class="service"><h4>Cetak Foto</h4><p>Cetak berbagai ukuran (4R, 3R, dsb).</p></div>
@@ -194,47 +209,106 @@
 
           <div style="height:12px"></div>
           <strong>Catatan:</strong>
-          <p style="color:var(--muted);font-size:13px">Jika kamu ingin menyimpan file yang diupload secara online, isi variabel <code>FORM_ENDPOINT</code> di bagian skrip dengan endpoint Formspree atau backend-mu. Jika tidak, form akan membuka pesan WhatsApp otomatis (file tidak dikirim lewat WA â€” pelanggan harus mengirim file ketika chat dimulai).</p>
+          <p style="color:var(--muted);font-size:13px">File maksimal 50 MB, Jika melebihi 50 MB silahkan kirim melalui link ini: https://forms.gle/Y6UdXTf6zpXPVeE46 </p>
         </div>
       </div>
     </section>
 
     <section id="gallery" style="padding-top:18px">
-      <h3>Galeri</h3>
-      <div class="gallery">
-        <!-- Ganti gambar-gambar berikut dengan foto hasil cetakmu -->
-        <img src="gallery1.jpg" alt="Hasil cetak 1" />
-        <img src="gallery2.jpg" alt="Hasil cetak 2" />
-        <img src="gallery3.jpg" alt="Hasil cetak 3" />
-        <img src="gallery4.jpg" alt="Hasil cetak 4" />
-      </div>
-    </section>
+  <h3>Galeri</h3>
+  <div class="gallery">
+    <img src="gallery1.jpg" alt="Hasil cetak undangan" />
+    <img src="gallery2.jpg" alt="Hasil cetak foto" />
+    <img src="gallery3.jpg" alt="Hasil print warna" />
+    <img src="gallery4.jpg" alt="Hasil fotokopi" />
+  </div>
+</section>
+
+<section id="review" style="padding-top:30px">
+  <h3>Review Pelanggan</h3>
+  <p style="color:var(--muted);margin-bottom:16px">Beberapa pelanggan yang puas dengan layanan Printawan ?</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+    <!-- Review 1 -->
+    <div style="background:#fff;border:1px solid rgba(15,23,36,0.08);border-radius:14px;padding:18px;box-shadow:0 6px 16px rgba(0,0,0,0.04)">
+      <div style="color:#FFD700;font-size:20px;">
+  &#9733;&#9733;&#9733;&#9733;&#9733;
+</div>
+      <p style="font-style:italic;color:var(--muted)">“Pelayanannya cepat banget! Hasil print-nya juga rapi dan bersih.”</p>
+      <strong>- NV, Mahasiswi POLINEMA</strong>
+    </div>
+
+    <!-- Review 2 -->
+    <div style="background:#fff;border:1px solid rgba(15,23,36,0.08);border-radius:14px;padding:18px;box-shadow:0 6px 16px rgba(0,0,0,0.04)">
+      <div style="color:#FFD700;font-size:20px;">
+  &#9733;&#9733;&#9733;&#9733</div>
+      <p style="font-style:italic;color:var(--muted)">“Udah sering cetak di sini, hasilnya selalu memuaskan dan warna tajam!”</p>
+      <strong>- FH, Warga Karangrejo</strong>
+    </div>
+
+    <!-- Review 3 -->
+    <div style="background:#fff;border:1px solid rgba(15,23,36,0.08);border-radius:14px;padding:18px;box-shadow:0 6px 16px rgba(0,0,0,0.04)">
+      <div style="color:#FFD700;font-size:20px;">
+  &#9733;&#9733;&#9733;&#9733
+</div>
+      <p style="font-style:italic;color:var(--muted)">“Harga bersahabat, pelayanan cepat, cocok banget buat mahasiswa yang buru-buru tugas ??.”</p>
+      <strong>- HSW, Pelanggan Tetap</strong>
+    </div>
+
+    <!-- Review 4 -->
+    <div style="background:#fff;border:1px solid rgba(15,23,36,0.08);border-radius:14px;padding:18px;box-shadow:0 6px 16px rgba(0,0,0,0.04)">
+<div style="color:#FFD700;font-size:20px;">
+  &#9733;&#9733;&#9733;&#9733;&#9733;
+</div>      
+      <p style="font-style:italic;color:var(--muted)">“Cetak undangan di sini hasilnya bagus banget, desainnya rapi dan elegan.”</p>
+      <strong>- HB, Pelanggan Baru</strong>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="margin-top:60px;">
+  <h2>Pertanyaan yang Sering Diajukan</h2>
+  <p><strong>Apakah bisa pesan lewat WA?</strong><br>Ya, tinggal klik tombol WhatsApp di bawah ini dan kirim file Anda.</p>
+  <p><strong>Apakah bisa bayar transfer?</strong><br>Bisa, kami menerima pembayaran via BRI, BCA, dan DANA.</p>
+</section>
 
     <section id="contact" style="padding-top:18px">
       <h3>Kontak</h3>
-      <p style="color:var(--muted)">WhatsApp: <strong>0816-155-3842</strong></p>
+      <p style="color:var(--muted)">WhatsApp: <strong>0816-1555-3842</strong></p>
       <p style="color:var(--muted)">Alamat: Kec. Ngasem, Desa Karangrejo, Gang Jengitri</p>
       <!-- Jika kamu punya link Google Maps, ganti '#' di bawah -->
-      <p><a href="#" target="_blank">Lihat di Google Maps</a></p>
+      <p><a href="https://goo.gl/maps/b1VZ6bDC1houFJ9X9" target="_blank">Lihat di Google Maps</a></p>
     </section>
 
     <footer>
       <div class="container" style="display:flex;justify-content:space-between;align-items:center">
-        <div>Â© <strong>Printawan</strong> â€” Solusi Cetakmu Secepat Kilat!</div>
-        <div style="color:var(--muted)">HP: 0816-155-3842</div>
+        <div>ï¿½ <strong>Printawan</strong> ï¿½ Solusi Cetakmu Secepat Kilat!</div>
+        <div style="color:var(--muted)">HP: 0816-1555-3842</div>
       </div>
     </footer>
   </main>
 
   <!-- WhatsApp floating -->
   <div class="wa">
-    <a id="waLink" href="https://wa.me/628161553842?text=Halo%20Printawan,%20saya%20ingin%20pesan" target="_blank">Chat WA</a>
+    <a id="waLink" href="https://wa.me/6281615553842?text=Halo%20Printawan,%20saya%20ingin%20pesan" target="_blank">Chat WA</a>
   </div>
 
   <script>
     /*
       INSTRUKSI PENTING:
       - Ganti file gambar (logo.png, hero-sample.jpg, galleryX.jpg) dengan file asli milikmu.
+<div class="card" style="box-shadow:0 6px 20px rgba(0,0,0,0.08); overflow:hidden; border-radius:16px;">
+  <img src="banner-printawan.jpg" 
+       alt="Banner Printawan" 
+       style="width:100%; 
+              max-height:280px; 
+              object-fit:cover; 
+              border-radius:16px; 
+              display:block; 
+              margin:0 auto;">
+</div>
+
+
       - Jika ingin menerima file upload secara online, daftarkan Formspree (https://formspree.io) atau setup backend, lalu isi FORM_ENDPOINT di bawah.
       - Jika tidak ada backend, form akan membuka chat WhatsApp (file tidak otomatis terkirim lewat WA).
     */
@@ -307,5 +381,15 @@
     updateSummary();
   </script>
 </body>
-
 </html>
+
+
+
+<footer style="text-align:center; padding:20px; margin-top:60px; background:#f8f9fa; border-top:1px solid #eee;">
+  <p> 2025 <strong>Printawan</strong>. All rights reserved.</p>
+  <p style="font-size:14px;">Didesain oleh <a href="#" style="text-decoration:none;color:#007bff;">Teguh Kurniawan</a></p>
+</footer>
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+  style="position:fixed;bottom:20px;right:20px;background:#007bff;color:white;border:none;padding:10px 14px;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+?
+</button>
