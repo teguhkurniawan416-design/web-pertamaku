@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Printawan � Solusi Cetakmu Secepat Kilat!</title>
+  <title>Printawan ï¿½ Solusi Cetakmu Secepat Kilat!</title>
   <meta name="description" content="Printawan: Jasa print, fotokopi, dan cetak foto. Pesan bisa melalui online maupun offline." />
   <style>
     /* ====== Reset & base ====== */
@@ -234,7 +234,7 @@
       <div style="color:#FFD700;font-size:20px;">
   &#9733;&#9733;&#9733;&#9733;&#9733;
 </div>
-      <p style="font-style:italic;color:var(--muted)">�Pelayanannya cepat banget! Hasil print-nya juga rapi dan bersih.�</p>
+      <p style="font-style:italic;color:var(--muted)">Pelayanannya cepat banget! Hasil print-nya juga rapi dan bersih.</p>
       <strong>- NV, Mahasiswi POLINEMA</strong>
     </div>
 
@@ -242,7 +242,7 @@
     <div style="background:#fff;border:1px solid rgba(15,23,36,0.08);border-radius:14px;padding:18px;box-shadow:0 6px 16px rgba(0,0,0,0.04)">
       <div style="color:#FFD700;font-size:20px;">
   &#9733;&#9733;&#9733;&#9733</div>
-      <p style="font-style:italic;color:var(--muted)">�Udah sering cetak di sini, hasilnya selalu memuaskan dan warna tajam!�</p>
+      <p style="font-style:italic;color:var(--muted)">Udah sering cetak di sini, hasilnya selalu memuaskan dan warna tajam!</p>
       <strong>- FH, Warga Karangrejo</strong>
     </div>
 
@@ -251,7 +251,7 @@
       <div style="color:#FFD700;font-size:20px;">
   &#9733;&#9733;&#9733;&#9733
 </div>
-      <p style="font-style:italic;color:var(--muted)">�Harga bersahabat, pelayanan cepat, cocok banget buat mahasiswa yang buru-buru tugas ??.�</p>
+      <p style="font-style:italic;color:var(--muted)">Harga bersahabat, pelayanan cepat, cocok banget buat mahasiswa yang buru-buru tugas.</p>
       <strong>- HSW, Pelanggan Tetap</strong>
     </div>
 
@@ -260,11 +260,97 @@
 <div style="color:#FFD700;font-size:20px;">
   &#9733;&#9733;&#9733;&#9733;&#9733;
 </div>      
-      <p style="font-style:italic;color:var(--muted)">�Cetak undangan di sini hasilnya bagus banget, desainnya rapi dan elegan.�</p>
+      <p style="font-style:italic;color:var(--muted)">Cetak undangan di sini hasilnya bagus banget, desainnya rapi dan elegan.</p>
       <strong>- HB, Pelanggan Baru</strong>
     </div>
   </div>
 </section>
+
+<section id="review" class="container" style="margin-top: 60px;">
+  <h2>Tulis Review Kamu</h2>
+  <p>Bagikan pengalamanmu setelah menggunakan layanan Printawan!</p>
+
+  <form id="reviewForm" style="max-width:500px;">
+    <label for="name">Nama:</label>
+    <input type="text" id="name" name="name" placeholder="Masukkan nama kamu" required
+      style="width:100%;padding:8px;margin-bottom:10px;border-radius:6px;border:1px solid #ccc;">
+
+    <label for="rating">Rating:</label>
+    <div id="stars" style="margin-bottom:10px; font-size: 22px; cursor:pointer;">
+      <span class="star" data-value="1">&#9733;</span>
+      <span class="star" data-value="2">&#9733;</span>
+      <span class="star" data-value="3">&#9733;</span>
+      <span class="star" data-value="4">&#9733;</span>
+      <span class="star" data-value="5">&#9733;</span>
+    </div>
+
+    <label for="message">Komentar:</label>
+    <textarea id="message" name="message" rows="4" placeholder="Tulis komentarmu di sini..." required
+      style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
+
+    <button type="submit"
+      style="margin-top:10px;background-color:#2563eb;color:white;padding:10px 20px;border:none;border-radius:6px;cursor:pointer;">Kirim
+      Review</button>
+  </form>
+
+  <div id="reviewList" style="margin-top:30px;">
+    <h3>Review dari Pelanggan:</h3>
+  </div>
+</section>
+<script>
+  const stars = document.querySelectorAll('.star');
+  let selectedRating = 0;
+
+  // ? Biar bisa klik bintang
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = star.getAttribute('data-value');
+      stars.forEach(s => s.style.color = '#ccc');
+      for (let i = 0; i < selectedRating; i++) {
+        stars[i].style.color = '#facc15';
+      }
+    });
+  });
+
+  // ?? Saat form dikirim
+  document.getElementById('reviewForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (selectedRating === 0) {
+      alert("Pilih rating dulu ya ??");
+      return;
+    }
+
+    const reviewList = document.getElementById('reviewList');
+    const newReview = document.createElement('div');
+    newReview.style.marginTop = '15px';
+    newReview.style.borderBottom = '1px solid #eee';
+    newReview.style.paddingBottom = '10px';
+    newReview.style.position = 'relative';
+
+    newReview.innerHTML = `
+      <strong>${name.toUpperCase()}</strong>
+      <span style="color:#facc15;">${'&#9733;'.repeat(selectedRating)}</span>
+      <p>${message}</p>
+      <button class="delete-btn" style="background:none;border:none;color:red;cursor:pointer;font-size:12px;position:absolute;right:0;top:0;">Hapus</button>
+    `;
+
+    reviewList.appendChild(newReview);
+
+    // Reset form dan bintang
+    this.reset();
+    stars.forEach(s => s.style.color = '#ccc');
+    selectedRating = 0;
+
+    // ?? Tombol hapus review
+    newReview.querySelector('.delete-btn').addEventListener('click', function () {
+      newReview.remove();
+    });
+  });
+</script>
 
 <section id="faq" style="margin-top:60px;">
   <h2>Pertanyaan yang Sering Diajukan</h2>
@@ -276,17 +362,25 @@
       <h3>Kontak</h3>
       <p style="color:var(--muted)">WhatsApp: <strong>0816-1555-3842</strong></p>
       <p style="color:var(--muted)">Alamat: Kec. Ngasem, Desa Karangrejo, Gang Jengitri</p>
-      <!-- Jika kamu punya link Google Maps, ganti '#' di bawah -->
-      <p><a href="https://goo.gl/maps/b1VZ6bDC1houFJ9X9" target="_blank">Lihat di Google Maps</a></p>
-    </section>
+<p><a href="https://www.google.com/maps/place/Gang+Jengitri,+Karangrejo,+Ngasem,+Kediri" target="_blank">Lihat di Google Maps</a></p>
 
-    <footer>
-      <div class="container" style="display:flex;justify-content:space-between;align-items:center">
-        <div>� <strong>Printawan</strong> � Solusi Cetakmu Secepat Kilat!</div>
-        <div style="color:var(--muted)">HP: 0816-1555-3842</div>
-      </div>
-    </footer>
-  </main>
+<!-- Tambahan: embed peta Google -->
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.451504438379!2d112.01973807499252!3d-7.060719769031995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857a80c49c2b7%3A0x9f3e678ab9c27b54!2sGang%20Jengitri%2C%20Karangrejo%2C%20Ngasem%2C%20Kediri!5e0!3m2!1sid!2sid!4v1730340000000!5m2!1sid!2sid"
+  width="100%"
+  height="300"
+  style="border:0; border-radius:12px; margin-top:10px;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+    <div><strong>Printawan</strong>  Solusi Cetakmu Secepat Kilat!</div>
+    <div style="color:var(--muted)">HP: 0816-1555-3842</div>
+  </div>
+</footer>
 
   <!-- WhatsApp floating -->
   <div class="wa">
